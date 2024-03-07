@@ -5,10 +5,10 @@ const BreadCrumbs = () => {
   console.log(matches);
   let crumbs = matches
     // first get rid of any matches that don't have handle and crumb
-    .filter((match) => Boolean(match.handle?.crumb))
+    .filter((match: any) => Boolean(match.handle?.crumb))
     // now map them into an array of elements, passing the loader
     // data to each one
-    .map((match) => {
+    .map((match: any) => {
       console.log(match);
       return match.handle.crumb(match.data);
     });

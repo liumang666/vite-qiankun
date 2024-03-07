@@ -40,7 +40,7 @@ renderWithQiankun({
     console.log("bootstrap");
   },
   unmount(props: any) {
-    console.log("unmount");
+    console.log("unmount", props);
 
     // const { container } = props;
     // const root = container
@@ -50,7 +50,7 @@ renderWithQiankun({
     instance.unmount();
   },
   update(props: any) {
-    console.log("system app update");
+    console.log("system app update", props);
     // console.log(props)
   },
 });
