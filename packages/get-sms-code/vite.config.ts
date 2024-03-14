@@ -1,15 +1,13 @@
-import { defineConfig } from 'vite'
-import { resolve } from 'path'
-import { arcoTheme } from '../../../common/themes'
-import external from '../../../common/external'
-import vue from '@vitejs/plugin-vue'
-import dts from 'vite-plugin-dts'
+import { defineConfig } from "vite";
+import { resolve } from "path";
+import vue from "@vitejs/plugin-vue";
+import dts from "vite-plugin-dts";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
-      '@': resolve(__dirname, './src'),
+      "@": resolve(__dirname, "./src"),
     },
   },
   build: {
@@ -17,25 +15,33 @@ export default defineConfig({
     sourcemap: true,
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, 'src/index.ts'),
-      name: 'index',
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "index",
       // the proper extensions will be added
-      fileName: 'index',
+      fileName: "index",
     },
     rollupOptions: {
-      external: external.external,
+      external: ["vue"],
       output: {
-        globals: external.globals,
+        globals: {
+          vue: "vue",
+        },
       },
     },
   },
   css: {
     preprocessorOptions: {
       less: {
-        modifyVars: arcoTheme,
+        modifyVars: {
+          "primary-color": "#0088FF",
+          "border-color-base": "#d9d9d9",
+          "error-color": "#F53F3F",
+          "success-color": "#00B42A",
+          "warning-color": "#faad14",
+        },
         javascriptEnabled: true,
       },
     },
   },
   plugins: [vue(), dts()],
-})
+});

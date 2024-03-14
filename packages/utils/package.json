@@ -1,5 +1,5 @@
 {
-  "name": "@vue/get-sms-code",
+  "name": "utils",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.mjs",
@@ -11,18 +11,12 @@
     "tsc": "vue-tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "vue": "^3.3.11"
-  },
   "devDependencies": {
-    "@types/node": "^20.5.6",
-    "@vue/fetch": "workspace:*",
-    "utils": "workspace:*",
-    "dayjs": "^1.11.7",
     "typescript": "^5.1.6",
     "vite": "^4.4.9",
+    "@types/node": "^20.5.6",
     "vite-plugin-dts": "~2.3.0",
-    "@vitejs/plugin-vue": "^5.0.4",
+    "dayjs": "^1.11.7",
     "vue-tsc": "^1.0.9"
   },
   "keywords": [],

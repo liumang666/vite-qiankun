@@ -29,8 +29,7 @@ const vaPtChaRef = reactive({
 });
 
 const handleGetCode = () => {
-  if (!isActive.value)
-    return; // VAPTCHA实例初始化完成后，用户点击获取验证码按钮时执行人机验证
+  if (!isActive.value) return; // VAPTCHA实例初始化完成后，用户点击获取验证码按钮时执行人机验证
   (toRaw(vaPtChaRef).vaPtCha as any).validate();
 };
 
