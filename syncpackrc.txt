@@ -1,0 +1,23 @@
+// 官网： https://jamiemason.github.io/syncpack/guide/getting-started/
+
+{
+  "versionGroups": [
+    {
+      "label": "Use workspace protocol when developing local packages", // 说明字段，可有可无
+      "dependencies": [ // 项目中的依赖包，例如dev下的react包（dependencies: ['react']），$LOCAL 表示当前工程下开发的本地包，** 表示所有的依赖
+        "$LOCAL"
+      ],
+      // "packages": ["react-app"] // 表示某个项目包, ** 表示所有的项目
+      "pinVersion": "workspace:*" // 指定版本号类型 ，可以是 18.0.2 ，
+    },
+    { // 将所有包下的 vue 依赖版本统一为 ~3.3.4
+      "dependencies": [ 
+        "vue"
+      ],
+      "packages": [
+        "**"
+      ],
+      "pinVersion": "~3.3.4"
+    }
+  ]
+}
