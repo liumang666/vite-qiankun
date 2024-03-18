@@ -1,5 +1,5 @@
 {
-  "name": "@vue/get-sms-code",
+  "name": "get-sms-code",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.mjs",
