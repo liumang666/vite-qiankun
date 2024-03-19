@@ -6,7 +6,13 @@
   >
     获取验证码
   </span>
-  <span class="code-btn" v-else> 重新获取 {{ currentTime }}s </span>
+  <span
+    class="code-btn"
+    :class="currentTime > 0 ? 'code-current-time' : ''"
+    v-else
+  >
+    重新获取 {{ currentTime }}s
+  </span>
 </template>
 
 <script setup lang="ts">
@@ -29,7 +35,8 @@ const vaPtChaRef = reactive({
 });
 
 const handleGetCode = () => {
-  if (!isActive.value) return; // VAPTCHA实例初始化完成后，用户点击获取验证码按钮时执行人机验证
+  if (!isActive.value)
+    return; // VAPTCHA实例初始化完成后，用户点击获取验证码按钮时执行人机验证
   (toRaw(vaPtChaRef).vaPtCha as any).validate();
 };
 
@@ -71,12 +78,9 @@ const vaPtChaObjListen = () => {
             currentTime.value -= 1;
           }
         }, 1000);
-      } else {
-        // 校验失败失败，重置人机验证
-        (toRaw(vaPtChaRef).vaPtCha as any).reset();
       }
     })
-    .catch((e) => {
+    .finally(() => {
       (toRaw(vaPtChaRef).vaPtCha as any).reset();
     });
 };
@@ -84,7 +88,7 @@ const vaPtChaObjListen = () => {
 onMounted(() => {
   loadVaPtCha3Script().then((vaptcha: any) => {
     vaptcha({
-      vid: "vaptcha——key", // vaptcha频台的id
+      vid: "5fd0b1595bb14063462b1169", // vaptcha频台的id
       mode: "invisible",
       scene: 1, // 1-表示当前页面唤起人机验证
       area: "auto",
