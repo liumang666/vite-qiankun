@@ -15,7 +15,6 @@ import {
 let instance: any;
 
 const render = (props?: any) => {
-  console.log(111111);
   const { container } = props;
   const rootDom = container
     ? container.querySelector("#root")

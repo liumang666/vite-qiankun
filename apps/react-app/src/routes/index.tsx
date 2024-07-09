@@ -11,6 +11,7 @@ const router = createHashRouter(
   [
     {
       path: "/",
+      // element: <Layout />,
       element: <Layout />,
       errorElement: <ErrorPage />,
       children: [
@@ -39,6 +40,10 @@ const router = createHashRouter(
             },
             {
               path: "microReactApp/*",
+              element: <MicroContain />,
+            },
+            {
+              path: "microVueApp/*",
               element: <MicroContain />,
             },
             // {

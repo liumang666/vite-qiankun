@@ -5,17 +5,18 @@ import { RouterView, RouterLink } from "vue-router";
 <template>
   <div class="layout">
     <div class="right">
+      <!-- 这里路由需要通过pinia或localstorage获取，因为在 ./main.ts 时有做处理 -->
       <div class="item">
-        <RouterLink to="/">主应用-首页</RouterLink>
+        <!-- <RouterLink to="/">首页</RouterLink> -->
+        <RouterLink to="/microVueApp/">首页</RouterLink>
       </div>
       <div class="item">
-        <RouterLink to="/about">主应用-关于</RouterLink>
+        <!-- <RouterLink to="/about">关于</RouterLink> -->
+        <RouterLink to="/microVueApp/about">关于</RouterLink>
       </div>
       <div class="item">
-        <RouterLink to="/route">主应用-vue路由</RouterLink>
-      </div>
-      <div class="item">
-        <RouterLink to="/microVueApp">主应用-vue微应用</RouterLink>
+        <!-- <RouterLink to="/route">vue路由</RouterLink> -->
+        <RouterLink to="/microVueApp/route">vue路由</RouterLink>
       </div>
     </div>
     <div class="content">

@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from "vite";
 import path from "path";
 import vue from "@vitejs/plugin-vue";
+import qiankun from "vite-plugin-qiankun";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -12,7 +13,12 @@ export default defineConfig(({ mode }) => {
         "@": path.resolve(__dirname, "./src"),
       },
     },
-    plugins: [vue()],
+    plugins: [
+      qiankun("microVueApp", {
+        useDevMode: isDev,
+      }),
+      vue(),
+    ],
     css: {
       preprocessorOptions: {
         less: {
@@ -21,7 +27,7 @@ export default defineConfig(({ mode }) => {
       },
     },
     server: {
-      port: 3572,
+      port: 8082,
     },
   };
 });

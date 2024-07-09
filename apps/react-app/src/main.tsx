@@ -16,8 +16,15 @@ registerMicroApps(
       name: "microReactApp",
       entry: "http://localhost:8081",
       container: "#subapp-viewport",
-      //       // activeRule: "#/micro-test",
+      // activeRule: "#/micro-test",
       activeRule: "#/microReactApp",
+    },
+    {
+      name: "microVueApp",
+      entry: "http://localhost:8082",
+      container: "#subapp-viewport",
+      // activeRule: "#/micro-test",
+      activeRule: "#/microVueApp",
     },
   ],
   {

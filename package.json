@@ -7,6 +7,7 @@
     "dev:vue-app": "turbo dev --filter=vue-app",
     "dev:react-app": "turbo dev --filter=react-app",
     "dev:micro-react-app": "turbo dev --filter=micro-react-app",
+    "dev:micro-vue-app": "turbo dev --filter=micro-vue-app",
     "dev:micro-test": "turbo dev --filter=micro-test",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""

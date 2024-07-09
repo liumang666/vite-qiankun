@@ -57,9 +57,10 @@ const Layout = () => {
               <NavLink to={`/contacts/1`}>主应用-contacts</NavLink>
             </li>
             <li>
-              <NavLink to={`/microReactApp/contacts/1`}>
-                微应用-microReactApp
-              </NavLink>
+              <NavLink to={`/microReactApp`}>微应用-microReactApp</NavLink>
+            </li>
+            <li>
+              <NavLink to={`/microVueApp`}>微应用-microVueApp</NavLink>
             </li>
             <li>
               <NavLink to={`/micro-test`}>微应用-microTestApp</NavLink>
