@@ -11,6 +11,5 @@ onMounted(() => {
     (window as any).qiankunStarted = true;
     start();
   }
-  // console.log(window?.qiankunStarted);
 });
 </script>

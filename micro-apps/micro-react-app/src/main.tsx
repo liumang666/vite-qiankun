@@ -40,12 +40,6 @@ renderWithQiankun({
   },
   unmount(props: any) {
     console.log("unmount", props);
-
-    // const { container } = props;
-    // const root = container
-    //   ? container.querySelector("#root")
-    //   : document.querySelector("#root");
-    // console.log(root);
     instance.unmount();
   },
   update(props: any) {

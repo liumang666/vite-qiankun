@@ -23,6 +23,12 @@ const routes = [
     name: "microVueApp",
     component: () => import("@/views/micro/index.vue"),
   }, // 懒加载
+  {
+    path: "/microReactApp/:pathMatch(.*)*",
+    // path: "/microVueApp/:chapters*",
+    name: "microReactApp",
+    component: () => import("@/views/micro/index.vue"),
+  }, // 懒加载
 ];
 
 const router = createRouter({

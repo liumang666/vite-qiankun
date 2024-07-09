@@ -17,6 +17,9 @@ import { RouterView, RouterLink } from "vue-router";
       <div class="item">
         <RouterLink to="/microVueApp">主应用-vue微应用</RouterLink>
       </div>
+      <div class="item">
+        <RouterLink to="/microReactApp">主应用-react微应用</RouterLink>
+      </div>
     </div>
     <div class="content">
       <RouterView></RouterView>

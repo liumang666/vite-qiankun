@@ -2,19 +2,18 @@ import { App, createApp } from "vue";
 import "./style.css";
 import AppComponent from "./App.vue";
 import router from "./router";
-import { registerMicroApps, start } from "qiankun";
+import { registerMicroApps } from "qiankun";
 
 createApp(AppComponent).use(router).mount("#app");
 
 registerMicroApps(
   [
-    // {
-    //   name: "microReactApp",
-    //   entry: "http://localhost:8081",
-    //   container: "#subapp-viewport",
-    //   // activeRule: "#/micro-test",
-    //   activeRule: "#/microReactApp",
-    // },
+    {
+      name: "microReactApp",
+      entry: "http://localhost:8081",
+      container: "#subapp-viewport",
+      activeRule: "#/microReactApp",
+    },
     {
       name: "microVueApp",
       entry: "http://localhost:8082",
