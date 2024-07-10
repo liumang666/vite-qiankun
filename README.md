@@ -33,7 +33,10 @@ To develop all apps and packages, run the following command:
 
 ```
 cd vite-qiankun
-pnpm dev
+pnpm dev:vue-app
+pnpm dev:react-app
+pnpm dev:micro-react-app
+pnpm dev:micro-vue-app
 ```
 
 ## Useful Links
