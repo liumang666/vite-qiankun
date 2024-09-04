@@ -1,14 +1,13 @@
-import { defineConfig } from 'vite'
-import { resolve } from 'path'
-import dts from 'vite-plugin-dts'
-import vue from '@vitejs/plugin-vue'
-const external = require('../../../common/external')
+import { defineConfig } from "vite";
+import { resolve } from "path";
+import dts from "vite-plugin-dts";
+import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
-      '@': resolve(__dirname, './src'),
+      "@": resolve(__dirname, "./src"),
     },
   },
   build: {
@@ -16,17 +15,11 @@ export default defineConfig({
     sourcemap: true,
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, 'src/index.ts'),
-      name: 'index',
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "index",
       // the proper extensions will be added
-      fileName: 'index',
-    },
-    rollupOptions: {
-      external: external.external,
-      output: {
-        globals: external.globals,
-      },
+      fileName: "index",
     },
   },
   plugins: [vue(), dts()],
-})
+});
